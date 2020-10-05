@@ -58,3 +58,7 @@ a {
 a:hover {
   color: #ffce00;
 }
+
+.error {
+  color: #de0102;
+}
