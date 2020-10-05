@@ -63,6 +63,11 @@ a:hover {
   color: #de0102;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+}
+
 .dashboard-language-name {
   font-size: 3em;
   font-weight: bold;
@@ -89,12 +94,41 @@ a:hover {
   padding-bottom: 16px;
 }
 
-.dashboard-word-counts {
-}
-
 .dashboard-word-counts span {
   font-weight: bold;
 }
+
+.button-link {
+  border: thin solid #000;
+  padding: 10px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 1.3em;
+  max-width: 200px;
+}
+
+.button-link:hover {
+  background-color: #ffce00;
+  color: #000;
+  box-shadow: 5px 5px 5px #333333;
+}
+
+.button-link-div {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/*
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: calc(10px + 1vmin);
+}
+*/
 
 @media screen and (min-width: 450px) {
   .dashboard-word-list-item {

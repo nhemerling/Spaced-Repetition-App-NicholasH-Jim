@@ -40,7 +40,7 @@ class DashboardRoute extends Component {
       <section>
         <h2 className="dashboard-language-name">{name}</h2>
         <div>Total correct answers: {total_score}</div>
-        <a href="/learn">Start practicing</a>
+        <div className="button-link-div"><a className="button-link" href="/learn">Start practicing</a></div>
         <h3 className="dashboard-subtitle">Words to practice</h3>
         <ul className="dashboard-word-list">{this.renderWords()}</ul>
       </section>
