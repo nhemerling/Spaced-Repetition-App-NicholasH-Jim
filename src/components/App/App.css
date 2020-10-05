@@ -52,7 +52,7 @@ input {
 }
 
 a {
- color: #000;
+  color: #000;
 }
 
 a:hover {
@@ -61,4 +61,13 @@ a:hover {
 
 .error {
   color: #de0102;
+}
+
+.word-list {
+  list-style: none;
+}
+
+.word-list-item {
+  border-bottom: 2px solid black;
+  padding-bottom: 16px;
 }
