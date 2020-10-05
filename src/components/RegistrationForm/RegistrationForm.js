@@ -1,52 +1,52 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Input, Required, Label } from '../Form/Form'
-import AuthApiService from '../../services/auth-api-service'
-import Button from '../Button/Button'
-import './RegistrationForm.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Input, Required, Label } from '../Form/Form';
+import AuthApiService from '../../services/auth-api-service';
+import Button from '../Button/Button';
+import './RegistrationForm.css';
 
 class RegistrationForm extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => { }
-  }
+  };
 
-  state = { error: null }
+  state = { error: null };
 
-  firstInput = React.createRef()
+  firstInput = React.createRef();
 
   handleSubmit = ev => {
-    ev.preventDefault()
-    const { name, username, password } = ev.target
+    ev.preventDefault();
+    const { name, username, password } = ev.target;
     AuthApiService.postUser({
       name: name.value,
       username: username.value,
       password: password.value,
     })
       .then(user => {
-        name.value = ''
-        username.value = ''
-        password.value = ''
-        this.props.onRegistrationSuccess()
+        name.value = '';
+        username.value = '';
+        password.value = '';
+        this.props.onRegistrationSuccess();
       })
       .catch(res => {
-        this.setState({ error: res.error })
-      })
-  }
+        this.setState({ error: res.error });
+      });
+  };
 
   componentDidMount() {
-    this.firstInput.current.focus()
+    this.firstInput.current.focus();
   }
 
   render() {
-    const { error } = this.state
+    const { error } = this.state;
     return (
       <form
         onSubmit={this.handleSubmit}
       >
-        <div role='alert'>
+        <div className='form-div' role='alert'>
           {error && <p>{error}</p>}
         </div>
-        <div>
+        <div className='form-div'>
           <Label htmlFor='registration-name-input'>
             Enter your name<Required />
           </Label>
@@ -57,7 +57,7 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className='form-div'>
           <Label htmlFor='registration-username-input'>
             Choose a username<Required />
           </Label>
@@ -67,7 +67,7 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className='form-div'>
           <Label htmlFor='registration-password-input'>
             Choose a password<Required />
           </Label>
@@ -79,15 +79,15 @@ class RegistrationForm extends Component {
           />
         </div>
         <footer>
-          <Button type='submit'>
+          <Button type='submit' className='registration-button'>
             Sign up
           </Button>
           {' '}
           <Link to='/login'>Already have an account?</Link>
         </footer>
       </form>
-    )
+    );
   }
 }
 
-export default RegistrationForm
+export default RegistrationForm;

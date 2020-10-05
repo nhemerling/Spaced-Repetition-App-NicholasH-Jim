@@ -1,0 +1,60 @@
+.App {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 20px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input {
+  min-height: 30px;
+}
+
+a {
+ color: #000;
+}
+
+a:hover {
+  color: #ffce00;
+}

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import LoginForm from '../../components/LoginForm/LoginForm'
+import React, { Component } from 'react';
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 class LoginRoute extends Component {
   static defaultProps = {
@@ -7,17 +7,20 @@ class LoginRoute extends Component {
     history: {
       push: () => { },
     },
-  }
+  };
 
   handleLoginSuccess = () => {
-    const { location, history } = this.props
-    const destination = (location.state || {}).from || '/'
-    history.push(destination)
-  }
+    const { location, history } = this.props;
+    const destination = (location.state || {}).from || '/';
+    history.push(destination);
+  };
 
   render() {
     return (
       <section>
+        <p>
+          Practice learning a language with the spaced reptition revision technique.
+        </p>
         <h2>Login</h2>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}
@@ -27,4 +30,4 @@ class LoginRoute extends Component {
   }
 }
 
-export default LoginRoute
+export default LoginRoute;

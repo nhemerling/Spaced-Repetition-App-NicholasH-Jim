@@ -1,0 +1,38 @@
+header {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+}
+
+.flag-red {
+  background-color: #de0102;
+}
+
+.flag-yellow {
+  background-color: #ffce00;
+}
+
+a.header-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 450px) {
+  header {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
