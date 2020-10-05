@@ -63,11 +63,43 @@ a:hover {
   color: #de0102;
 }
 
-.word-list {
+.dashboard-language-name {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.dashboard-subtitle {
+  font-size: 2.3em;
+  font-weight: bold;
+}
+
+.dashboard-word {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.dashboard-word-list {
   list-style: none;
 }
 
-.word-list-item {
+.dashboard-word-list-item {
+  /*flexbox for h4/div*/
+  display: flex;
+  flex-direction: column;
   border-bottom: 2px solid black;
   padding-bottom: 16px;
+}
+
+.dashboard-word-counts {
+}
+
+.dashboard-word-counts span {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 450px) {
+  .dashboard-word-list-item {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
