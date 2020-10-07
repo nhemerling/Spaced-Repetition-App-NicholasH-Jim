@@ -10,7 +10,7 @@ class LearningFeedback extends Component {
   }
 
   render() {
-    const { response, guess } = this.props;
+    const { response, guess, handleTryAnotherWord } = this.props;
     const {
       nextWord,
       wordCorrectCount,
@@ -34,7 +34,7 @@ class LearningFeedback extends Component {
             </p>
           </div>
 
-          <button>Try another word!</button>
+          <button onClick={() => handleTryAnotherWord()}>Try another word!</button>
         </main>
       </section>
     );
