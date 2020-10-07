@@ -17,22 +17,45 @@ class LearningRoute extends Component {
 
   state = {
     showFeedback: false,
+    response: {},
+    guess: '',
   };
+
+  handleSubmit = (ev) => {
+    ev.preventDefault();
+    const guess = ev.target['learn-guess-input'].value;
+    SpacedRepetitionService.postGuess({ guess: guess }).then((res) => {
+      const response = this.state.response;
+      //response.nextWord = res.nextWord;
+      response.nextWord = this.state.word;
+      response.wordCorrectCount = res.wordCorrectCount;
+      response.wordIncorrectCount = res.wordIncorrectCount;
+      response.totalScore = res.totalScore;
+      response.answer = res.answer;
+      response.isCorrect = res.isCorrect;
+
+      this.setState({ response: response, showFeedback: true, guess: guess });
+    });
+  };
+
   render() {
     const {
       word,
       wordCorrectCount,
       wordIncorrectCount,
       totalScore,
+      response,
+      guess,
     } = this.state;
     return this.state.showFeedback ? (
-      <LearningFeedback />
+      <LearningFeedback response={response} guess={guess} />
     ) : (
       <LearningWordPrompt
         word={word}
         correctCount={wordCorrectCount}
         incorrectCount={wordIncorrectCount}
         totalScore={totalScore}
+        handleSubmit={this.handleSubmit}
       />
     );
   }
