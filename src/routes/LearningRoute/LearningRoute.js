@@ -39,21 +39,10 @@ class LearningRoute extends Component {
         showFeedback: true,
         guess: guess,
         totalScore: response.totalScore,
-        nextWord: res.nextWord
+        nextWord: res.nextWord,
       });
     });
   };
-
-  // getHeadWord = () => {
-  //   SpacedRepetitionService.getHeadWord().then((res) => {
-  //     this.setState({
-  //       word: res.nextWord,
-  //       wordCorrectCount: res.wordCorrectCount,
-  //       wordIncorrectCount: res.wordIncorrectCount,
-  //       totalScore: res.totalScore,
-  //     });
-  //   });
-  // };
 
   handleTryAnotherWord = () => {
     SpacedRepetitionService.getHeadWord().then((res) => {
@@ -77,16 +66,20 @@ class LearningRoute extends Component {
       guess,
     } = this.state;
     return this.state.showFeedback ? (
-      <LearningFeedback response={response} guess={guess} handleTryAnotherWord={this.handleTryAnotherWord} />
+      <LearningFeedback
+        response={response}
+        guess={guess}
+        handleTryAnotherWord={this.handleTryAnotherWord}
+      />
     ) : (
-        <LearningWordPrompt
-          word={word}
-          correctCount={wordCorrectCount}
-          incorrectCount={wordIncorrectCount}
-          totalScore={totalScore}
-          handleSubmit={this.handleSubmit}
-        />
-      );
+      <LearningWordPrompt
+        word={word}
+        correctCount={wordCorrectCount}
+        incorrectCount={wordIncorrectCount}
+        totalScore={totalScore}
+        handleSubmit={this.handleSubmit}
+      />
+    );
   }
 }
 
