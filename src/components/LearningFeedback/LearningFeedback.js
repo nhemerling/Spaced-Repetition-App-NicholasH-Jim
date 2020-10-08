@@ -11,14 +11,7 @@ class LearningFeedback extends Component {
 
   render() {
     const { response, guess, handleTryAnotherWord } = this.props;
-    const {
-      nextWord,
-      wordCorrectCount,
-      wordIncorrectCount,
-      totalScore,
-      answer,
-      isCorrect,
-    } = response;
+    const { nextWord, totalScore, answer, isCorrect } = response;
 
     return (
       <section>
@@ -29,12 +22,14 @@ class LearningFeedback extends Component {
           <h2>{this.renderFeedbackMsg(isCorrect)}</h2>
           <div className="DisplayFeedback">
             <p>
-              The correct translation for {nextWord} was {answer} and you chose{' '}
-              {guess}!
+              The correct translation for <span lang="de">{nextWord}</span> was{' '}
+              {answer} and you chose {guess}!
             </p>
           </div>
 
-          <button onClick={() => handleTryAnotherWord()}>Try another word!</button>
+          <button onClick={() => handleTryAnotherWord()}>
+            Try another word!
+          </button>
         </main>
       </section>
     );

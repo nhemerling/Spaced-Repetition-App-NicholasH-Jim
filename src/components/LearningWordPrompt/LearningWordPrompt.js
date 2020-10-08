@@ -14,7 +14,7 @@ class LearningWordPrompt extends Component {
       <section>
         <main>
           <h2>Translate the word:</h2>
-          <span>{word}</span>
+          <span lang="de">{word}</span>
           <form onSubmit={(ev) => handleSubmit(ev)}>
             <label htmlFor="learn-guess-input">
               What's the translation for this word?
